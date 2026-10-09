@@ -1,0 +1,165 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Be Vietnam Pro', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+
+  /* Vàng mật ong – lấy từ logo Tâm Trí */
+  --color-honey-50: #fffaee;
+  --color-honey-100: #fdf1d3;
+  --color-honey-200: #fae2a6;
+  --color-honey-300: #f5cd6a;
+  --color-honey-400: #eeb840;
+  --color-honey-500: #d99b1f;
+  --color-honey-600: #b57a12;
+  --color-honey-700: #8c5c10;
+
+  /* Nền kem & hồng phấn */
+  --color-cream: #fcf8f1;
+  --color-cream-200: #f6eee1;
+  --color-blush-100: #f9e9e3;
+  --color-blush-200: #f2d4c9;
+  --color-blush-400: #dc9d89;
+
+  /* Chữ & khối tối */
+  --color-ink: #2b2420;
+  --color-ink-soft: #4a403a;
+  --color-muted: #776b62;
+  --color-night: #221c19;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+}
+
+@utility btn {
+  @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-honey-500 disabled:pointer-events-none disabled:opacity-60;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    font-feature-settings: 'ss01';
+  }
+  ::selection {
+    @apply bg-honey-200 text-ink;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-honey-600 uppercase;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-px w-8 bg-honey-400;
+  }
+
+  .heading {
+    @apply font-display text-3xl leading-tight font-semibold text-balance text-ink sm:text-4xl lg:text-[2.75rem];
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-cream shadow-lg shadow-ink/10 hover:-translate-y-0.5 hover:bg-ink-soft;
+  }
+  .btn-honey {
+    @apply btn bg-honey-400 text-ink shadow-lg shadow-honey-500/25 hover:-translate-y-0.5 hover:bg-honey-300;
+  }
+  .btn-ghost {
+    @apply btn border border-ink/15 bg-white/60 text-ink backdrop-blur hover:border-ink/30 hover:bg-white;
+  }
+
+  .card {
+    @apply rounded-3xl border border-ink/5 bg-white shadow-[0_1px_0_rgba(43,36,32,0.04),0_20px_40px_-24px_rgba(43,36,32,0.18)];
+  }
+
+  .field {
+    @apply w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink transition outline-none placeholder:text-muted/70 focus:border-honey-400 focus:ring-4 focus:ring-honey-200/60;
+  }
+
+  /* Nội dung bài viết & trang dịch vụ */
+  .prose-tt {
+    @apply text-[1.0625rem] leading-relaxed text-ink-soft;
+  }
+  .prose-tt > * + * {
+    @apply mt-5;
+  }
+  .prose-tt > h2 {
+    @apply mt-12 font-display text-2xl font-semibold text-ink first:mt-0 sm:text-[1.75rem];
+  }
+  .prose-tt > h3 {
+    @apply mt-8 text-lg font-semibold text-ink;
+  }
+  .prose-tt ul {
+    @apply space-y-2.5;
+  }
+  .prose-tt ul > li {
+    @apply relative pl-7;
+  }
+  .prose-tt ul > li::before {
+    content: '';
+    @apply absolute top-[0.6em] left-1 h-2 w-2 rounded-full bg-honey-400 ring-4 ring-honey-100;
+  }
+  .prose-tt strong {
+    @apply font-semibold text-ink;
+  }
+  .prose-tt blockquote {
+    @apply rounded-2xl border-l-4 border-honey-400 bg-honey-50 px-6 py-4 text-ink italic;
+  }
+}
+
+/* Hiệu ứng xuất hiện khi cuộn */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
