@@ -43,7 +43,7 @@ export default function JourneySection() {
         {trimesters.map((t, i) => (
           <div key={t.name} className="flex flex-1 items-center gap-2">
             <span className={`h-2 flex-1 rounded-full ${t.tone}`} />
-            {i === trimesters.length - 1 && <span className="font-display text-sm font-semibold text-honey-700 italic">Bé chào đời</span>}
+            {i === trimesters.length - 1 && <span className="font-display text-sm font-bold text-honey-700 italic">Bé chào đời</span>}
           </div>
         ))}
       </Reveal>
@@ -52,7 +52,7 @@ export default function JourneySection() {
         {trimesters.map((t, i) => (
           <Reveal key={t.name} delay={i * 110} className="card flex flex-col p-7">
             <div className="flex items-baseline justify-between gap-4">
-              <h3 className="font-display text-2xl font-semibold">{t.name}</h3>
+              <h3 className="font-display text-2xl font-bold">{t.name}</h3>
               <span className="text-xs font-semibold tracking-wide whitespace-nowrap text-honey-700">{t.range}</span>
             </div>
             <p className="mt-2 text-sm leading-relaxed text-muted">{t.text}</p>

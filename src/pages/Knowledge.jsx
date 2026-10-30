@@ -52,7 +52,7 @@ export default function Knowledge() {
                 <p className="inline-flex items-center gap-2 text-xs font-medium text-muted">
                   <CalendarDays className="h-3.5 w-3.5" /> {formatDate(featured.date)}
                 </p>
-                <h2 className="mt-3 font-display text-2xl leading-snug font-semibold transition group-hover:text-honey-700 sm:text-3xl">
+                <h2 className="mt-3 font-display text-2xl leading-snug font-bold transition group-hover:text-honey-700 sm:text-3xl">
                   {featured.title}
                 </h2>
                 <p className="mt-4 leading-relaxed text-muted">{featured.excerpt}</p>

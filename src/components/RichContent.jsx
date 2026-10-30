@@ -22,9 +22,9 @@ function Cards({ items }) {
             </span>
             <h3 className="text-base font-semibold text-ink">{card.title}</h3>
           </div>
-          {card.text && <p className="mt-3 text-[0.9375rem] leading-relaxed">{card.text}</p>}
+          {card.text && <p className="mt-3 text-base leading-relaxed">{card.text}</p>}
           {card.items && (
-            <ul className="mt-4 text-[0.9375rem]">
+            <ul className="mt-4 text-base">
               {card.items.map((it) => (
                 <ListItem key={typeof it === 'string' ? it : it.title} item={it} />
               ))}
@@ -41,7 +41,7 @@ function Steps({ items }) {
     <ol className={`grid gap-4 sm:grid-cols-2 ${items.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
       {items.map((step, i) => (
         <li key={step.title} className="relative rounded-3xl bg-honey-50 p-6 ring-1 ring-honey-200/60">
-          <span className="font-display text-3xl font-semibold text-honey-500">{i + 1}</span>
+          <span className="font-display text-3xl font-bold text-honey-500">{i + 1}</span>
           <h3 className="mt-2 text-base font-semibold text-ink">{step.title}</h3>
           <p className="mt-1.5 text-sm leading-relaxed">{step.text}</p>
         </li>
@@ -60,7 +60,7 @@ function Timeline({ items }) {
           <h3 className="mt-3 text-lg font-semibold text-ink">{item.title}</h3>
           {item.text && <p className="mt-1.5">{item.text}</p>}
           {item.items && (
-            <ul className="mt-3 text-[0.9375rem]">
+            <ul className="mt-3 text-base">
               {item.items.map((it) => (
                 <ListItem key={it} item={it} />
               ))}

@@ -42,7 +42,7 @@ function BookingModal({ service, onClose }) {
         <div className="relative overflow-hidden bg-gradient-to-br from-honey-200 via-honey-100 to-blush-100 px-6 pt-7 pb-6 sm:px-8">
           <div className="absolute -top-16 -right-10 h-48 w-48 rounded-full border-[28px] border-white/40" />
           <p className="eyebrow">Đặt lịch khám</p>
-          <h2 id="booking-title" className="mt-3 font-display text-2xl font-semibold sm:text-3xl">
+          <h2 id="booking-title" className="mt-3 font-display text-2xl font-bold sm:text-3xl">
             Tâm Trí luôn sẵn sàng lắng nghe bạn
           </h2>
           <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-soft">

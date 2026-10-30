@@ -9,7 +9,7 @@ export function SectionHeading({ eyebrow, title, description, align = 'center', 
     <Reveal className={cx(align === 'center' ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl', className)}>
       {eyebrow && <p className={cx('eyebrow', dark && 'text-honey-300 before:bg-honey-300')}>{eyebrow}</p>}
       <h2 className={cx('heading mt-4', dark && 'text-cream')}>{title}</h2>
-      {description && <p className={cx('mt-4 text-[1.0625rem] leading-relaxed', dark ? 'text-cream/70' : 'text-muted')}>{description}</p>}
+      {description && <p className={cx('mt-4 text-[1.125rem] leading-relaxed', dark ? 'text-cream/70' : 'text-muted')}>{description}</p>}
     </Reveal>
   )
 }
@@ -20,14 +20,14 @@ export function ServiceCard({ service, index, detailed = false }) {
       to={`/dich-vu/${service.slug}`}
       className="group card relative flex h-full flex-col p-7 transition duration-500 hover:-translate-y-1.5 hover:border-honey-200 hover:shadow-[0_30px_60px_-30px_rgba(181,122,18,0.35)]"
     >
-      <span className="absolute top-6 right-7 font-display text-4xl font-semibold text-honey-100 transition group-hover:text-honey-200">
+      <span className="absolute top-6 right-7 font-display text-4xl font-bold text-honey-100 transition group-hover:text-honey-200">
         {String(index + 1).padStart(2, '0')}
       </span>
       <span className="grid h-14 w-14 place-items-center rounded-2xl bg-honey-100 text-honey-600 transition duration-500 group-hover:rotate-[-6deg] group-hover:bg-honey-400 group-hover:text-ink">
         <Icon name={service.icon} className="h-7 w-7" strokeWidth={1.6} />
       </span>
       <h3 className="mt-6 text-xl font-semibold text-ink">{service.title}</h3>
-      <p className="mt-2 text-[0.9375rem] leading-relaxed text-muted">{detailed ? service.summary : service.tagline}</p>
+      <p className="mt-2 text-base leading-relaxed text-muted">{detailed ? service.summary : service.tagline}</p>
       <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-honey-700">
         Tìm hiểu thêm
         <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -108,7 +108,7 @@ export function PageHero({ eyebrow, title, description, crumbs = [], icon, child
             </span>
           )}
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-          <h1 className="mt-4 font-display text-4xl leading-[1.12] font-semibold text-ink sm:text-5xl lg:text-[3.5rem]">{title}</h1>
+          <h1 className="mt-4 font-display text-4xl leading-[1.12] font-bold text-ink sm:text-5xl lg:text-[3.5rem]">{title}</h1>
           {description && <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{description}</p>}
           {children}
         </div>

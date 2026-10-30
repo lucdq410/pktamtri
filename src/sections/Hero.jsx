@@ -62,7 +62,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="mt-6 font-display text-[2.625rem] leading-[1.08] font-semibold tracking-tight text-balance text-ink sm:text-6xl xl:text-[4.25rem]">
+            <h1 className="mt-6 font-display text-[2.625rem] leading-[1.08] font-bold tracking-tight text-balance text-ink sm:text-6xl xl:text-[4.25rem]">
               Không gì quý hơn <em className="text-honey-600">sức khỏe</em> và{' '}
               <em className="relative whitespace-nowrap text-honey-600">
                 hạnh phúc
@@ -97,7 +97,7 @@ export default function Hero() {
                 ['3.000', 'bệnh nhân tin chọn'],
               ].map(([value, label]) => (
                 <div key={value} className="px-3 first:pl-0 sm:px-5">
-                  <dt className="font-display text-xl font-semibold text-ink sm:text-2xl">{value}</dt>
+                  <dt className="font-display text-xl font-bold text-ink sm:text-2xl">{value}</dt>
                   <dd className="mt-1 text-xs leading-snug text-muted sm:text-sm">{label}</dd>
                 </div>
               ))}

@@ -11,7 +11,7 @@ import { cx } from '../lib/utils'
 
 function TopBar() {
   return (
-    <div className="hidden bg-night text-[0.8125rem] text-cream/75 md:block">
+    <div className="hidden bg-night text-sm text-cream/75 md:block">
       <div className="container-x flex h-10 items-center justify-between gap-6">
         <div className="flex items-center gap-6">
           <span className="inline-flex items-center gap-2">
@@ -60,7 +60,7 @@ function MegaMenu() {
         <div className="relative flex flex-col justify-end overflow-hidden bg-gradient-to-br from-honey-200 to-blush-100 p-6">
           <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full border-[24px] border-white/50" />
           <p className="text-xs font-semibold tracking-[0.18em] text-honey-700 uppercase">Được chọn nhiều nhất</p>
-          <p className="mt-2 font-display text-xl leading-snug font-semibold">Gói chăm sóc thai kỳ toàn diện</p>
+          <p className="mt-2 font-display text-xl leading-snug font-bold">Gói chăm sóc thai kỳ toàn diện</p>
           <p className="mt-2 text-xs leading-relaxed text-ink-soft">Từ A đến Z – từ khi mang thai đến khi bé chào đời.</p>
           <Link to="/dich-vu/goi-cham-soc-thai-ky-toan-dien" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-ink hover:gap-2.5 transition-all">
             Xem chi tiết <ArrowRight className="h-4 w-4" />
@@ -99,7 +99,7 @@ export default function Header() {
 
   const linkClass = ({ isActive }) =>
     cx(
-      'relative inline-flex items-center gap-1 px-1 py-2 text-[0.9375rem] font-medium transition',
+      'relative inline-flex items-center gap-1 px-1 py-2 text-base font-medium transition',
       'after:absolute after:inset-x-1 after:-bottom-0.5 after:h-0.5 after:origin-left after:rounded-full after:bg-honey-400 after:transition after:duration-300',
       isActive ? 'text-ink after:scale-x-100' : 'text-ink-soft after:scale-x-0 hover:text-ink hover:after:scale-x-100',
     )
@@ -144,7 +144,7 @@ export default function Header() {
                 <Phone className="h-4 w-4" />
               </span>
               <span className="leading-tight">
-                <span className="block text-[0.6875rem] text-muted">Hotline đặt lịch</span>
+                <span className="block text-xs text-muted">Hotline đặt lịch</span>
                 <span className="block text-sm font-bold tracking-wide text-ink">{clinic.hotline}</span>
               </span>
             </a>

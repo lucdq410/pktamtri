@@ -40,7 +40,7 @@ export default function Contact() {
             </a>
           </InfoCard>
           <InfoCard icon={Phone} title="Hotline" delay={80}>
-            <a href={`tel:${clinic.tel}`} className="font-display text-2xl font-semibold text-ink hover:text-honey-700">
+            <a href={`tel:${clinic.tel}`} className="font-display text-2xl font-bold text-ink hover:text-honey-700">
               {clinic.hotline}
             </a>
             <p className="mt-1">Đặt lịch & tư vấn miễn phí</p>
@@ -74,7 +74,7 @@ export default function Contact() {
       <section className="container-x grid gap-6 py-16 lg:grid-cols-2 lg:pb-28">
         <Reveal className="card p-6 sm:p-10">
           <p className="eyebrow">Để lại lời nhắn</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold">Đăng ký tư vấn</h2>
+          <h2 className="mt-3 font-display text-3xl font-bold">Đăng ký tư vấn</h2>
           <p className="mt-2 mb-8 text-sm text-muted">Các mục có dấu * là bắt buộc.</p>
           <BookingForm />
         </Reveal>

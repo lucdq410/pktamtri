@@ -35,6 +35,19 @@ export const images = {
 
 Khi chưa có ảnh, website dùng hình minh họa mặc định.
 
+## Font chữ
+
+Font nhận diện thương hiệu là **SVN-Aptima** (Bold cho tiêu đề, Regular cho nội dung). Aptima là font
+thương mại của Linotype/Monotype nên chưa được đưa vào dự án. Trong lúc chờ, website dùng
+**Ysabeau Office** (Google Fonts, giấy phép OFL, miễn phí thương mại) – kiểu chữ gần giống Aptima nhất có hỗ trợ tiếng Việt.
+
+Khi có file webfont Aptima **đã mua bản quyền**:
+
+1. Chép file vào `public/fonts/` với tên `SVN-Aptima.woff2` và `SVN-Aptima-Bold.woff2`.
+2. Bỏ chú thích khối `@font-face` ở đầu `src/index.css`.
+
+Website sẽ tự dùng Aptima; Ysabeau Office chỉ còn là font dự phòng.
+
 ## Form đặt lịch
 
 Website chưa có máy chủ nhận dữ liệu. Tạo file `.env` (xem `.env.example`) và đặt

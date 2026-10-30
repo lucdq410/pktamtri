@@ -11,7 +11,7 @@ export default function AboutIntro({ showLink = true }) {
       <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionHeading align="left" eyebrow="Về Tâm Trí" title="Hơn cả một phòng khám – nơi khởi đầu những hành trình thiêng liêng" />
-          <Reveal delay={100} className="mt-6 space-y-4 text-[1.0625rem] leading-relaxed text-muted">
+          <Reveal delay={100} className="mt-6 space-y-4 text-[1.125rem] leading-relaxed text-muted">
             <p>
               Chúng tôi không chỉ chữa lành, mà còn đồng hành để mang đến sức khỏe và niềm vui trọn vẹn nhất. Với trái tim tận tâm và trí tuệ vượt trội, Tâm Trí cam kết mang đến sự an tâm trọn vẹn trong từng khoảnh khắc của bạn.
             </p>
@@ -30,7 +30,7 @@ export default function AboutIntro({ showLink = true }) {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <Reveal className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-honey-100 to-white p-8 ring-1 ring-honey-200/70">
-            <span className="font-display text-7xl leading-none font-semibold text-honey-400">Tâm</span>
+            <span className="font-display text-7xl leading-none font-bold text-honey-400">Tâm</span>
             <p className="mt-6 text-lg font-semibold">Trái tim tận tâm</p>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               Lắng nghe, chia sẻ và giải đáp từng lo âu – đảm bảo sự an tâm tuyệt đối cho mỗi mẹ bầu.
@@ -38,7 +38,7 @@ export default function AboutIntro({ showLink = true }) {
           </Reveal>
           <Reveal delay={120} className="relative overflow-hidden rounded-[2rem] bg-ink p-8 text-cream sm:mt-14">
             <div className="absolute -right-10 -bottom-10 h-36 w-36 rounded-full border-[20px] border-honey-400/15" />
-            <span className="font-display text-7xl leading-none font-semibold text-honey-300">Trí</span>
+            <span className="font-display text-7xl leading-none font-bold text-honey-300">Trí</span>
             <p className="mt-6 text-lg font-semibold">Trí tuệ vượt trội</p>
             <p className="mt-2 text-sm leading-relaxed text-cream/70">
               Chuyên môn cao cùng hệ thống máy móc hiện đại cho kết quả chính xác, an toàn cho mẹ và bé.

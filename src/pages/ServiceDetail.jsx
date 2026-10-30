@@ -45,7 +45,7 @@ export default function ServiceDetail() {
 
           <div className="mt-14 flex flex-col justify-between gap-6 rounded-[2rem] bg-gradient-to-br from-honey-200 to-blush-100 p-8 sm:flex-row sm:items-center">
             <div>
-              <p className="font-display text-2xl font-semibold">Còn điều gì băn khoăn?</p>
+              <p className="font-display text-2xl font-bold">Còn điều gì băn khoăn?</p>
               <p className="mt-1 text-sm text-ink-soft">Liên hệ hotline để được bác sĩ tư vấn trực tiếp.</p>
             </div>
             <a href={`tel:${clinic.tel}`} className="btn-primary shrink-0">

@@ -26,13 +26,13 @@ export default function Testimonials() {
                   )}
                 >
                   <Quote className={cx('h-9 w-9', dark ? 'text-honey-300' : 'text-honey-400')} strokeWidth={1.5} />
-                  <blockquote className={cx('mt-5 text-[0.975rem] leading-relaxed', dark ? 'text-cream/85' : 'text-ink-soft')}>
+                  <blockquote className={cx('mt-5 text-[1.0625rem] leading-relaxed', dark ? 'text-cream/85' : 'text-ink-soft')}>
                     “{t.quote}”
                   </blockquote>
                   <figcaption className={cx('mt-8 flex items-center gap-3 border-t pt-6', dark ? 'border-cream/10' : 'border-ink/5')}>
                     <span
                       className={cx(
-                        'grid h-11 w-11 place-items-center rounded-full font-display text-lg font-semibold',
+                        'grid h-11 w-11 place-items-center rounded-full font-display text-lg font-bold',
                         dark ? 'bg-honey-400 text-ink' : 'bg-honey-100 text-honey-700',
                       )}
                     >

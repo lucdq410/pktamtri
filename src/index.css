@@ -1,8 +1,34 @@
 @import 'tailwindcss';
 
+/*
+  Font nhận diện thương hiệu: SVN-Aptima (Bold cho tiêu đề, Regular cho nội dung).
+  Aptima là font thương mại – khi có file webfont đã mua bản quyền, chép vào public/fonts
+  rồi bỏ chú thích khối dưới đây. Trong lúc chưa có, website dùng Ysabeau Office
+  (Google Fonts, giấy phép OFL) – kiểu chữ gần giống Aptima nhất có hỗ trợ tiếng Việt.
+
+@font-face {
+  font-family: 'SVN-Aptima';
+  src: url('/fonts/SVN-Aptima.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SVN-Aptima';
+  src: url('/fonts/SVN-Aptima-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+*/
+
 @theme {
-  --font-sans: 'Be Vietnam Pro', system-ui, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'SVN-Aptima', 'Ysabeau Office', system-ui, sans-serif;
+  --font-display: 'SVN-Aptima', 'Ysabeau Office', system-ui, sans-serif;
+
+  /* Aptima/Ysabeau có chiều cao chữ thường thấp – tăng nhẹ các cỡ chữ nhỏ cho dễ đọc */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
 
   /* Vàng mật ong – lấy từ logo Tâm Trí */
   --color-honey-50: #fffaee;
@@ -24,7 +50,7 @@
   /* Chữ & khối tối */
   --color-ink: #2b2420;
   --color-ink-soft: #4a403a;
-  --color-muted: #776b62;
+  --color-muted: #6b6058;
   --color-night: #221c19;
 
   --animate-float: float 7s ease-in-out infinite;
@@ -82,7 +108,7 @@
   }
 
   .heading {
-    @apply font-display text-3xl leading-tight font-semibold text-balance text-ink sm:text-4xl lg:text-[2.75rem];
+    @apply font-display text-3xl leading-tight font-bold text-balance text-ink sm:text-4xl lg:text-[2.75rem];
   }
 
   .btn-primary {
@@ -105,13 +131,13 @@
 
   /* Nội dung bài viết & trang dịch vụ */
   .prose-tt {
-    @apply text-[1.0625rem] leading-relaxed text-ink-soft;
+    @apply text-[1.125rem] leading-relaxed text-ink-soft;
   }
   .prose-tt > * + * {
     @apply mt-5;
   }
   .prose-tt > h2 {
-    @apply mt-12 font-display text-2xl font-semibold text-ink first:mt-0 sm:text-[1.75rem];
+    @apply mt-12 font-display text-2xl font-bold text-ink first:mt-0 sm:text-[1.75rem];
   }
   .prose-tt > h3 {
     @apply mt-8 text-lg font-semibold text-ink;

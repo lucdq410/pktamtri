@@ -56,7 +56,7 @@ export default function BookingForm({ defaultService = '', autoFocus = false }) 
         <span className="grid h-16 w-16 place-items-center rounded-full bg-honey-100 text-honey-600">
           <CircleCheck className="h-8 w-8" />
         </span>
-        <h3 className="mt-5 font-display text-2xl font-semibold">Đăng ký thành công!</h3>
+        <h3 className="mt-5 font-display text-2xl font-bold">Đăng ký thành công!</h3>
         <p className="mt-2 max-w-sm text-muted">
           Cảm ơn {values.name.trim()} đã tin tưởng Tâm Trí. Phòng khám sẽ liên hệ với bạn trong thời gian sớm nhất.
         </p>

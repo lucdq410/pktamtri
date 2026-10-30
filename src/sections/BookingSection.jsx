@@ -25,7 +25,7 @@ export default function BookingSection({ title = 'Để Tâm Trí được đồ
               </span>
               <span>
                 <span className="block text-xs text-muted">Hotline đặt lịch</span>
-                <span className="block font-display text-2xl font-semibold tracking-wide">{clinic.hotline}</span>
+                <span className="block font-display text-2xl font-bold tracking-wide">{clinic.hotline}</span>
               </span>
             </a>
 
@@ -59,7 +59,7 @@ export default function BookingSection({ title = 'Để Tâm Trí được đồ
           </div>
 
           <div className="rounded-[2rem] bg-white p-6 shadow-xl shadow-honey-700/10 sm:p-8 lg:col-span-3">
-            <h3 className="font-display text-2xl font-semibold">Đăng ký thông tin</h3>
+            <h3 className="font-display text-2xl font-bold">Đăng ký thông tin</h3>
             <p className="mt-1 mb-6 text-sm text-muted">Các mục có dấu * là bắt buộc.</p>
             <BookingForm />
           </div>

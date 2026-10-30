@@ -30,7 +30,7 @@ export default function DoctorSection({ showLink = true }) {
             )}
           </div>
           <div className="absolute top-[38%] -right-2 rounded-3xl bg-honey-400 p-5 text-ink shadow-2xl shadow-black/30 sm:-right-8">
-            <p className="font-display text-4xl leading-none font-semibold">20+</p>
+            <p className="font-display text-4xl leading-none font-bold">20+</p>
             <p className="mt-1.5 max-w-[8rem] text-xs leading-snug font-medium">năm kinh nghiệm chuyên khoa Phụ Sản</p>
           </div>
         </Reveal>
@@ -51,7 +51,7 @@ export default function DoctorSection({ showLink = true }) {
           <Reveal delay={100} className="mt-10 grid gap-3 sm:grid-cols-3">
             {doctor.education.map((e) => (
               <div key={e.year} className="rounded-2xl border border-cream/10 bg-white/[0.03] p-5">
-                <p className="font-display text-2xl font-semibold text-honey-300">{e.year}</p>
+                <p className="font-display text-2xl font-bold text-honey-300">{e.year}</p>
                 <p className="mt-2 text-sm font-semibold">{e.title}</p>
                 <p className="mt-0.5 text-xs text-cream/60">{e.place}</p>
               </div>
