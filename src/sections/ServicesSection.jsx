@@ -6,14 +6,14 @@ import { services } from '../data/services'
 
 export default function ServicesSection({ detailed = false, showAllLink = true }) {
   return (
-    <section className="relative bg-cream-200/60 py-24 lg:py-32">
+    <section className="relative bg-cream-200/60 py-16 sm:py-24 lg:py-32">
       <div className="container-x">
         <SectionHeading
           eyebrow="Dịch vụ"
           title="Dịch vụ nổi bật"
           description="Đầy đủ các dịch vụ chất lượng và đa dạng – chăm sóc sức khỏe toàn diện từ khi thai kỳ bắt đầu cho đến khi bé chào đời khỏe mạnh."
         />
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-3 sm:mt-14 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 90} className="h-full">
               <ServiceCard service={s} index={i} detailed={detailed} />

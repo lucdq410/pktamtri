@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import Reveal from '../components/Reveal'
@@ -31,15 +32,17 @@ const trimesters = [
 ]
 
 export default function JourneySection() {
+  const [active, setActive] = useState(0)
+
   return (
-    <section className="container-x py-24 lg:py-32">
+    <section className="container-x py-16 sm:py-24 lg:py-32">
       <SectionHeading
         eyebrow="Lịch khám thai"
         title="Hành trình 40 tuần, Tâm Trí luôn bên mẹ"
         description="9 lần khám thai định kỳ theo chuẩn y khoa – ở mỗi cột mốc, bác sĩ đều đồng hành để mẹ an tâm và bé phát triển toàn diện."
       />
 
-      <Reveal className="mx-auto mt-14 flex max-w-4xl items-center gap-2" aria-hidden="true">
+      <Reveal className="mx-auto mt-14 hidden max-w-4xl items-center gap-2 lg:flex" aria-hidden="true">
         {trimesters.map((t, i) => (
           <div key={t.name} className="flex flex-1 items-center gap-2">
             <span className={`h-2 flex-1 rounded-full ${t.tone}`} />
@@ -48,15 +51,31 @@ export default function JourneySection() {
         ))}
       </Reveal>
 
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
+      {/* Điện thoại: chọn từng giai đoạn bằng tab thay vì xếp chồng 3 thẻ */}
+      <Reveal className="mt-8 grid grid-cols-3 gap-1 rounded-full bg-white p-1 ring-1 ring-ink/10 lg:hidden" role="tablist" aria-label="Giai đoạn thai kỳ">
         {trimesters.map((t, i) => (
-          <Reveal key={t.name} delay={i * 110} className="card flex flex-col p-7">
+          <button
+            key={t.name}
+            type="button"
+            role="tab"
+            aria-selected={i === active}
+            onClick={() => setActive(i)}
+            className={`cursor-pointer rounded-full px-2 py-2.5 text-sm font-semibold transition ${i === active ? 'bg-ink text-cream' : 'text-ink-soft'}`}
+          >
+            {t.name}
+          </button>
+        ))}
+      </Reveal>
+
+      <Reveal className="mt-5 grid gap-5 lg:mt-10 lg:grid-cols-3">
+        {trimesters.map((t, i) => (
+          <div key={t.name} role="tabpanel" className={`card flex-col p-5 sm:p-7 ${i === active ? 'flex' : 'hidden lg:flex'}`}>
             <div className="flex items-baseline justify-between gap-4">
               <h3 className="font-display text-2xl font-bold">{t.name}</h3>
               <span className="text-xs font-semibold tracking-wide whitespace-nowrap text-honey-700">{t.range}</span>
             </div>
             <p className="mt-2 text-sm leading-relaxed text-muted">{t.text}</p>
-            <ol className="mt-6 space-y-4 border-t border-ink/5 pt-6">
+            <ol className="mt-5 space-y-4 border-t border-ink/5 pt-5 sm:mt-6 sm:pt-6">
               {t.visits.map((v) => (
                 <li key={v.label} className="flex gap-4">
                   <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-sm font-bold text-ink ${t.tone}`}>
@@ -69,11 +88,11 @@ export default function JourneySection() {
                 </li>
               ))}
             </ol>
-          </Reveal>
+          </div>
         ))}
-      </div>
+      </Reveal>
 
-      <Reveal className="mt-10 text-center">
+      <Reveal className="mt-8 text-center sm:mt-10">
         <Link to="/dich-vu/kham-thai-dinh-ky" className="inline-flex items-center gap-2 text-sm font-semibold text-honey-700 transition-all hover:gap-3">
           Xem chi tiết lịch khám thai định kỳ <ArrowRight className="h-4 w-4" />
         </Link>

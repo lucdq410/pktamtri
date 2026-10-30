@@ -6,7 +6,7 @@ import { clinic, mapLink } from '../data/site'
 
 export default function BookingSection({ title = 'Để Tâm Trí được đồng hành cùng bạn' }) {
   return (
-    <section id="dat-lich" className="container-x scroll-mt-24 py-24 lg:py-32">
+    <section id="dat-lich" className="container-x scroll-mt-24 py-16 sm:py-24 lg:py-32">
       <Reveal className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-honey-200 via-honey-100 to-blush-100 p-5 sm:p-10 lg:p-14">
         <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full border-[40px] border-white/40" />
         <div className="pointer-events-none absolute right-[-4rem] bottom-[-6rem] h-80 w-80 rounded-full bg-white/30" />

@@ -6,7 +6,7 @@ import { posts } from '../data/posts'
 
 export default function LatestPosts() {
   return (
-    <section className="bg-cream-200/60 py-24 lg:py-32">
+    <section className="bg-cream-200/60 py-16 sm:py-24 lg:py-32">
       <div className="container-x">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading
@@ -21,13 +21,13 @@ export default function LatestPosts() {
             </Link>
           </Reveal>
         </div>
-        <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal className="no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4">
           {posts.slice(0, 4).map((p, i) => (
-            <Reveal key={p.slug} delay={i * 80} className="h-full">
+            <div key={p.slug} className="w-[78%] shrink-0 snap-start sm:w-auto">
               <PostCard post={p} index={i} />
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   )

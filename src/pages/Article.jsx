@@ -31,9 +31,20 @@ export default function Article() {
         </div>
       </PageHero>
 
-      <section className="container-x grid gap-14 pb-24 lg:grid-cols-12">
+      <section className="container-x grid gap-10 pb-16 sm:pb-24 lg:gap-14 lg:grid-cols-12">
         <article className="min-w-0 lg:col-span-8">
-          <PostCover post={post} index={index} large className="mb-12 aspect-[16/8] rounded-[2rem]" />
+          <figure className="mb-8 sm:mb-12">
+            <PostCover post={post} index={index} large className="aspect-[16/8] rounded-[2rem]" />
+            {post.image && (
+              <figcaption className="mt-2 text-right text-xs text-muted">
+                Ảnh minh họa: {post.image.author} /{' '}
+                <a href={post.image.source} target="_blank" rel="noreferrer" className="underline hover:text-ink">
+                  Wikimedia Commons
+                </a>
+                , {post.image.license}
+              </figcaption>
+            )}
+          </figure>
           <RichContent blocks={post.content} />
 
           <div className="mt-12 flex flex-wrap items-center gap-2 border-t border-ink/10 pt-8">
@@ -68,7 +79,7 @@ export default function Article() {
         </aside>
       </section>
 
-      <section className="bg-cream-200/60 py-20">
+      <section className="bg-cream-200/60 py-14 sm:py-20">
         <div className="container-x">
           <h2 className="heading">Bài viết khác</h2>
           <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">

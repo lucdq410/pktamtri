@@ -7,7 +7,7 @@ import { pillars } from '../data/site'
 
 export default function AboutIntro({ showLink = true }) {
   return (
-    <section className="container-x py-24 lg:py-32">
+    <section className="container-x py-16 sm:py-24 lg:py-32">
       <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionHeading align="left" eyebrow="Về Tâm Trí" title="Hơn cả một phòng khám – nơi khởi đầu những hành trình thiêng liêng" />
@@ -28,18 +28,18 @@ export default function AboutIntro({ showLink = true }) {
           )}
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          <Reveal className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-honey-100 to-white p-8 ring-1 ring-honey-200/70">
-            <span className="font-display text-7xl leading-none font-bold text-honey-400">Tâm</span>
-            <p className="mt-6 text-lg font-semibold">Trái tim tận tâm</p>
+        <div className="grid grid-cols-2 gap-3 sm:gap-5">
+          <Reveal className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-honey-100 to-white p-5 ring-1 ring-honey-200/70 sm:p-8">
+            <span className="font-display text-5xl leading-none sm:text-7xl font-bold text-honey-400">Tâm</span>
+            <p className="mt-4 text-base leading-snug font-semibold sm:mt-6 sm:text-lg">Trái tim tận tâm</p>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               Lắng nghe, chia sẻ và giải đáp từng lo âu – đảm bảo sự an tâm tuyệt đối cho mỗi mẹ bầu.
             </p>
           </Reveal>
-          <Reveal delay={120} className="relative overflow-hidden rounded-[2rem] bg-ink p-8 text-cream sm:mt-14">
+          <Reveal delay={120} className="relative overflow-hidden rounded-[2rem] bg-ink p-5 text-cream mt-8 sm:mt-14 sm:p-8">
             <div className="absolute -right-10 -bottom-10 h-36 w-36 rounded-full border-[20px] border-honey-400/15" />
-            <span className="font-display text-7xl leading-none font-bold text-honey-300">Trí</span>
-            <p className="mt-6 text-lg font-semibold">Trí tuệ vượt trội</p>
+            <span className="font-display text-5xl leading-none sm:text-7xl font-bold text-honey-300">Trí</span>
+            <p className="mt-4 text-base leading-snug font-semibold sm:mt-6 sm:text-lg">Trí tuệ vượt trội</p>
             <p className="mt-2 text-sm leading-relaxed text-cream/70">
               Chuyên môn cao cùng hệ thống máy móc hiện đại cho kết quả chính xác, an toàn cho mẹ và bé.
             </p>
@@ -47,14 +47,16 @@ export default function AboutIntro({ showLink = true }) {
         </div>
       </div>
 
-      <div className="mt-20 grid gap-5 md:grid-cols-3">
+      <div className="mt-12 grid gap-3 sm:mt-20 sm:gap-5 md:grid-cols-3">
         {pillars.map((p, i) => (
-          <Reveal key={p.title} delay={i * 100} className="group rounded-[2rem] border border-ink/5 bg-white/60 p-7 transition hover:bg-white">
-            <span className="grid h-12 w-12 place-items-center rounded-full bg-honey-100 text-honey-700 transition group-hover:bg-honey-400 group-hover:text-ink">
+          <Reveal key={p.title} delay={i * 100} className="group flex gap-4 rounded-[1.5rem] border border-ink/5 bg-white/60 p-5 transition hover:bg-white sm:block sm:rounded-[2rem] sm:p-7">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-honey-100 text-honey-700 transition group-hover:bg-honey-400 group-hover:text-ink">
               <Icon name={p.icon} className="h-6 w-6" strokeWidth={1.6} />
             </span>
-            <h3 className="mt-5 text-lg font-semibold">{p.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">{p.text}</p>
+            <div>
+              <h3 className="text-lg font-semibold sm:mt-5">{p.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted sm:mt-2">{p.text}</p>
+            </div>
           </Reveal>
         ))}
       </div>

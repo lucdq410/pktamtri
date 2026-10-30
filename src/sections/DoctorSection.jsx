@@ -14,11 +14,15 @@ export default function DoctorSection({ showLink = true }) {
       <div className="pointer-events-none absolute -top-24 right-[-6rem] h-80 w-80 rounded-full border border-honey-300/15" />
       <div className="pointer-events-none absolute -top-10 right-[-2rem] h-56 w-56 rounded-full border border-honey-300/10" />
 
-      <div className="container-x relative grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
-        <Reveal className="relative mx-auto w-full max-w-md">
+      <div className="container-x relative grid items-center gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-20">
+        <Reveal className="relative mx-auto w-full max-w-[20rem] sm:max-w-md">
           <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[2.5rem] bg-gradient-to-b from-honey-400/35 via-honey-300/10 to-white/[0.02] ring-1 ring-honey-300/25">
             {images.doctor ? (
-              <img src={images.doctor} alt={`${doctor.title} ${doctor.name}`} className="h-full w-full object-cover" />
+              <>
+                <img src={images.doctor} alt={`${doctor.title} ${doctor.name}`} className="h-full w-full object-cover" />
+                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-night/90 via-night/40 to-transparent" />
+                <p className="absolute inset-x-0 bottom-8 text-center font-display text-2xl font-bold text-cream">{doctor.short}</p>
+              </>
             ) : (
               <div className="absolute inset-0 grid place-items-center">
                 <span className="absolute h-72 w-72 rounded-full border border-honey-300/20" />
@@ -29,7 +33,7 @@ export default function DoctorSection({ showLink = true }) {
               </div>
             )}
           </div>
-          <div className="absolute top-[38%] -right-2 rounded-3xl bg-honey-400 p-5 text-ink shadow-2xl shadow-black/30 sm:-right-8">
+          <div className="absolute top-[55%] -right-2 rounded-3xl bg-honey-400 p-4 text-ink sm:p-5 shadow-2xl shadow-black/30 sm:-right-8">
             <p className="font-display text-4xl leading-none font-bold">20+</p>
             <p className="mt-1.5 max-w-[8rem] text-xs leading-snug font-medium">năm kinh nghiệm chuyên khoa Phụ Sản</p>
           </div>
@@ -48,24 +52,27 @@ export default function DoctorSection({ showLink = true }) {
             description={doctor.bio}
           />
 
-          <Reveal delay={100} className="mt-10 grid gap-3 sm:grid-cols-3">
+          <Reveal delay={100} className="mt-8 grid grid-cols-3 gap-2 sm:mt-10 sm:gap-3">
             {doctor.education.map((e) => (
-              <div key={e.year} className="rounded-2xl border border-cream/10 bg-white/[0.03] p-5">
-                <p className="font-display text-2xl font-bold text-honey-300">{e.year}</p>
-                <p className="mt-2 text-sm font-semibold">{e.title}</p>
-                <p className="mt-0.5 text-xs text-cream/60">{e.place}</p>
+              <div key={e.year} className="rounded-2xl border border-cream/10 bg-white/[0.03] p-3 sm:p-5">
+                <p className="font-display text-xl font-bold text-honey-300 sm:text-2xl">{e.year}</p>
+                <p className="mt-1 text-xs leading-snug font-semibold text-balance sm:mt-2 sm:text-sm">{e.title}</p>
+                <p className="mt-0.5 text-[0.6875rem] leading-snug text-cream/60 sm:text-xs">
+                  <span className="sm:hidden">{e.placeShort}</span>
+                  <span className="hidden sm:inline">{e.place}</span>
+                </p>
               </div>
             ))}
           </Reveal>
 
-          <Reveal delay={180} className="mt-10 flex gap-4 border-l-2 border-honey-400 pl-5">
+          <Reveal delay={180} className="mt-8 flex gap-4 sm:mt-10 border-l-2 border-honey-400 pl-5">
             <Quote className="h-6 w-6 shrink-0 text-honey-400" />
             <p className="font-display text-lg leading-relaxed text-cream/90 italic">
               Hạnh phúc của gia đình bạn là đích đến cho mọi nỗ lực của chúng tôi.
             </p>
           </Reveal>
 
-          <Reveal delay={240} className="mt-10 flex flex-wrap gap-3">
+          <Reveal delay={240} className="mt-8 grid gap-3 sm:mt-10 sm:flex sm:flex-wrap">
             <button type="button" onClick={() => openBooking()} className="btn-honey">
               <CalendarCheck className="h-4 w-4" /> Đặt lịch với bác sĩ
             </button>

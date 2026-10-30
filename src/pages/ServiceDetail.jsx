@@ -39,11 +39,11 @@ export default function ServiceDetail() {
         </div>
       </PageHero>
 
-      <section className="container-x grid gap-14 pb-24 lg:grid-cols-12 lg:pb-32">
+      <section className="container-x grid gap-10 pb-16 sm:pb-24 lg:gap-14 lg:grid-cols-12 lg:pb-32">
         <article className="min-w-0 lg:col-span-8">
           <RichContent blocks={service.content} />
 
-          <div className="mt-14 flex flex-col justify-between gap-6 rounded-[2rem] bg-gradient-to-br from-honey-200 to-blush-100 p-8 sm:flex-row sm:items-center">
+          <div className="mt-14 flex flex-col justify-between gap-5 rounded-[2rem] bg-gradient-to-br from-honey-200 to-blush-100 p-6 sm:flex-row sm:p-8 sm:items-center">
             <div>
               <p className="font-display text-2xl font-bold">Còn điều gì băn khoăn?</p>
               <p className="mt-1 text-sm text-ink-soft">Liên hệ hotline để được bác sĩ tư vấn trực tiếp.</p>

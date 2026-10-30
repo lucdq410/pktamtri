@@ -8,7 +8,7 @@ import { useTitle } from '../lib/utils'
 
 function InfoCard({ icon: IconComp, title, children, delay }) {
   return (
-    <Reveal delay={delay} className="card flex h-full flex-col p-6">
+    <Reveal delay={delay} className="card flex h-full flex-col p-5 sm:p-6">
       <span className="grid h-12 w-12 place-items-center rounded-2xl bg-honey-100 text-honey-700">
         <IconComp className="h-5 w-5" />
       </span>
@@ -71,7 +71,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="container-x grid gap-6 py-16 lg:grid-cols-2 lg:pb-28">
+      <section className="container-x grid gap-6 py-10 sm:py-16 lg:grid-cols-2 lg:pb-28">
         <Reveal className="card p-6 sm:p-10">
           <p className="eyebrow">Để lại lời nhắn</p>
           <h2 className="mt-3 font-display text-3xl font-bold">Đăng ký tư vấn</h2>
@@ -82,7 +82,7 @@ export default function Contact() {
           <iframe
             title={`Bản đồ ${clinic.name}`}
             src={mapEmbed}
-            className="h-full min-h-[26rem] w-full border-0 grayscale-[30%]"
+            className="h-full min-h-[20rem] w-full border-0 grayscale-[30%] sm:min-h-[26rem]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

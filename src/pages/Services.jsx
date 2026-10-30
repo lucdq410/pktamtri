@@ -16,7 +16,7 @@ export default function Services() {
         crumbs={[{ label: 'Dịch vụ' }]}
       />
       <section className="container-x pb-8">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 90} className="h-full">
               <ServiceCard service={s} index={i} detailed />

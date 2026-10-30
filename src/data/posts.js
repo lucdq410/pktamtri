@@ -7,6 +7,13 @@ export const posts = [
     date: '2025-11-21',
     category: 'Hỏi đáp',
     icon: 'HeartPulse',
+    // Ảnh mẫu tạm thời (Wikimedia Commons) – thay bằng ảnh của phòng khám khi có
+    image: {
+      src: '/images/kien-thuc/me-bau-hoi.webp',
+      author: 'NIAID',
+      license: 'CC BY 2.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Pregnant_woman_(43338546905).jpg',
+    },
     excerpt:
       'Đo CTG (Cardiotocography) – hay còn gọi là monitoring – giúp bác sĩ theo dõi nhịp tim thai và cơn gò tử cung, từ đó đánh giá em bé có đang khỏe mạnh hay không.',
     tags: ['Khám thai định kỳ', 'CTG', 'Gói chăm sóc thai kỳ'],
@@ -56,6 +63,13 @@ export const posts = [
     date: '2025-11-20',
     category: 'Xét nghiệm',
     icon: 'FlaskConical',
+    // Ảnh mẫu tạm thời (Wikimedia Commons) – thay bằng ảnh của phòng khám khi có
+    image: {
+      src: '/images/kien-thuc/bach-cau.webp',
+      author: 'Vegasjon',
+      license: 'CC BY-SA 4.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Blood_donation_(test_tubes).JPG',
+    },
     excerpt:
       '9 tháng 10 ngày mang thai đem lại nhiều thay đổi. Tăng bạch cầu là thay đổi chỉ có thể phát hiện qua xét nghiệm máu – vậy mẹ cần làm gì?',
     tags: ['Xét nghiệm máu', 'Sức khỏe mẹ bầu'],
@@ -104,6 +118,13 @@ export const posts = [
     date: '2025-11-20',
     category: 'Khám thai',
     icon: 'Stethoscope',
+    // Ảnh mẫu tạm thời (Wikimedia Commons) – thay bằng ảnh của phòng khám khi có
+    image: {
+      src: '/images/kien-thuc/kham-thai.webp',
+      author: 'Ricmart 01',
+      license: 'CC BY-SA 4.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Midwife_check-up.jpg',
+    },
     excerpt:
       '“Tim thai vẫn đập, con vẫn máy, siêu âm thấy hình con rõ là yên tâm rồi… phải không?” Thực tế là chưa đủ đâu mẹ nhé.',
     tags: ['Khám thai định kỳ', 'Siêu âm', 'NIPT'],
@@ -154,6 +175,13 @@ export const posts = [
     date: '2025-11-20',
     category: 'Sức khỏe mẹ bầu',
     icon: 'Salad',
+    // Ảnh mẫu tạm thời (Wikimedia Commons) – thay bằng ảnh của phòng khám khi có
+    image: {
+      src: '/images/kien-thuc/tao-bon.webp',
+      author: 'formulatehealth',
+      license: 'CC BY 2.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Healthy_Food_-_Colourful_Fruit_and_Veg_-_50191699151.jpg',
+    },
     excerpt:
       'Ước tính có đến một nửa số thai phụ gặp táo bón ở một giai đoạn nào đó. Đừng xem nhẹ – đây là cách phòng ngừa và cải thiện an toàn.',
     tags: ['Dinh dưỡng thai kỳ', 'Sức khỏe mẹ bầu'],

@@ -18,20 +18,23 @@ export function ServiceCard({ service, index, detailed = false }) {
   return (
     <Link
       to={`/dich-vu/${service.slug}`}
-      className="group card relative flex h-full flex-col p-7 transition duration-500 hover:-translate-y-1.5 hover:border-honey-200 hover:shadow-[0_30px_60px_-30px_rgba(181,122,18,0.35)]"
+      className="group card relative flex h-full gap-4 p-5 transition duration-500 hover:-translate-y-1.5 hover:border-honey-200 hover:shadow-[0_30px_60px_-30px_rgba(181,122,18,0.35)] sm:flex-col sm:gap-0 sm:p-7"
     >
-      <span className="absolute top-6 right-7 font-display text-4xl font-bold text-honey-100 transition group-hover:text-honey-200">
+      <span className="absolute top-6 right-7 hidden font-display text-4xl font-bold text-honey-100 transition group-hover:text-honey-200 sm:block">
         {String(index + 1).padStart(2, '0')}
       </span>
-      <span className="grid h-14 w-14 place-items-center rounded-2xl bg-honey-100 text-honey-600 transition duration-500 group-hover:rotate-[-6deg] group-hover:bg-honey-400 group-hover:text-ink">
-        <Icon name={service.icon} className="h-7 w-7" strokeWidth={1.6} />
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-honey-100 text-honey-600 transition duration-500 group-hover:rotate-[-6deg] group-hover:bg-honey-400 group-hover:text-ink sm:h-14 sm:w-14">
+        <Icon name={service.icon} className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.6} />
       </span>
-      <h3 className="mt-6 text-xl font-semibold text-ink">{service.title}</h3>
-      <p className="mt-2 text-base leading-relaxed text-muted">{detailed ? service.summary : service.tagline}</p>
-      <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-honey-700">
-        Tìm hiểu thêm
-        <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-      </span>
+      <div className="flex min-w-0 flex-1 flex-col">
+        <h3 className="text-lg leading-snug font-semibold text-ink sm:mt-6 sm:text-xl">{service.title}</h3>
+        <p className="mt-1 text-sm leading-relaxed text-muted sm:mt-2 sm:text-base">{detailed ? service.summary : service.tagline}</p>
+        <span className="mt-auto hidden items-center gap-1.5 pt-6 text-sm font-semibold text-honey-700 sm:inline-flex">
+          Tìm hiểu thêm
+          <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </span>
+      </div>
+      <ChevronRight className="h-5 w-5 shrink-0 self-center text-honey-600 sm:hidden" />
     </Link>
   )
 }
@@ -46,13 +49,27 @@ const tones = [
 export function PostCover({ post, index = 0, className = '', large = false }) {
   return (
     <div className={cx('relative overflow-hidden bg-gradient-to-br', tones[index % tones.length], className)}>
-      <div className="absolute -right-8 -bottom-10 h-40 w-40 rounded-full border-[22px] border-white/40" />
-      <div className="absolute top-6 -left-6 h-20 w-20 rounded-full bg-white/30" />
-      <Icon
-        name={post.icon}
-        className={cx('absolute text-honey-700/70', large ? 'right-10 bottom-10 h-28 w-28' : 'right-6 bottom-6 h-16 w-16')}
-        strokeWidth={1.1}
-      />
+      {post.image ? (
+        <>
+          <img
+            src={post.image.src}
+            alt={post.title}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/25 to-transparent" />
+        </>
+      ) : (
+        <>
+          <div className="absolute -right-8 -bottom-10 h-40 w-40 rounded-full border-[22px] border-white/40" />
+          <div className="absolute top-6 -left-6 h-20 w-20 rounded-full bg-white/30" />
+          <Icon
+            name={post.icon}
+            className={cx('absolute text-honey-700/70', large ? 'right-10 bottom-10 h-28 w-28' : 'right-6 bottom-6 h-16 w-16')}
+            strokeWidth={1.1}
+          />
+        </>
+      )}
       <span className="absolute top-4 left-4 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-ink backdrop-blur">
         {post.category}
       </span>
@@ -81,7 +98,7 @@ export function PageHero({ eyebrow, title, description, crumbs = [], icon, child
       <div className="pointer-events-none absolute -top-32 -right-24 -z-10 h-[28rem] w-[28rem] rounded-full bg-honey-200/50 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -left-24 -z-10 h-[24rem] w-[24rem] rounded-full bg-blush-200/50 blur-3xl" />
       <div className="pointer-events-none absolute top-10 right-[8%] hidden h-64 w-64 rounded-full border-[36px] border-white/60 lg:block" />
-      <div className="container-x relative pt-8 pb-14 lg:pt-12 lg:pb-20">
+      <div className="container-x relative pt-5 pb-10 sm:pt-8 sm:pb-14 lg:pt-12 lg:pb-20">
         <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-sm text-muted">
           <Link to="/" className="transition hover:text-ink">
             Trang chủ
@@ -101,15 +118,15 @@ export function PageHero({ eyebrow, title, description, crumbs = [], icon, child
             </span>
           ))}
         </nav>
-        <div className="mt-8 max-w-3xl">
+        <div className="mt-6 max-w-3xl sm:mt-8">
           {icon && (
-            <span className="mb-6 grid h-16 w-16 place-items-center rounded-2xl bg-white text-honey-600 shadow-lg shadow-honey-600/10">
+            <span className="mb-5 grid h-14 w-14 place-items-center rounded-2xl bg-white sm:mb-6 sm:h-16 sm:w-16 text-honey-600 shadow-lg shadow-honey-600/10">
               <Icon name={icon} className="h-8 w-8" strokeWidth={1.5} />
             </span>
           )}
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-          <h1 className="mt-4 font-display text-4xl leading-[1.12] font-bold text-ink sm:text-5xl lg:text-[3.5rem]">{title}</h1>
-          {description && <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{description}</p>}
+          <h1 className="mt-4 font-display text-[2.125rem] leading-[1.12] font-bold text-balance text-ink sm:text-5xl lg:text-[3.5rem]">{title}</h1>
+          {description && <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:mt-5 sm:text-lg">{description}</p>}
           {children}
         </div>
       </div>

@@ -48,7 +48,7 @@ export default function Knowledge() {
           <Reveal key={featured.slug} className="mt-10">
             <Link to={`/kien-thuc/${featured.slug}`} className="group card grid overflow-hidden lg:grid-cols-2">
               <PostCover post={featured} index={posts.indexOf(featured)} large className="min-h-64 lg:min-h-[22rem]" />
-              <div className="flex flex-col justify-center p-8 lg:p-12">
+              <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-12">
                 <p className="inline-flex items-center gap-2 text-xs font-medium text-muted">
                   <CalendarDays className="h-3.5 w-3.5" /> {formatDate(featured.date)}
                 </p>

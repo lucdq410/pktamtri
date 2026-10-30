@@ -31,7 +31,7 @@ export default function About() {
       <AboutIntro showLink={false} />
       <DoctorSection showLink={false} />
 
-      <section className="container-x py-24 lg:py-32">
+      <section className="container-x py-16 sm:py-24 lg:py-32">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal className="relative order-last lg:order-first">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-blush-200 via-blush-100 to-honey-100">

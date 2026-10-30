@@ -29,7 +29,7 @@ export const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(cli
 // ví dụ hero: '/images/hero.jpg'. Để null thì website dùng hình minh họa mặc định.
 export const images = {
   hero: null, // ảnh lớn ở đầu trang chủ (tỉ lệ dọc ~ 4:5)
-  doctor: null, // chân dung BS CKII Đỗ Văn Tâm (tỉ lệ dọc ~ 4:5)
+  doctor: '/images/bac-si-do-van-tam.webp', // chân dung BS CKII Đỗ Văn Tâm (tỉ lệ dọc ~ 4:5)
   space: null, // không gian phòng khám (tỉ lệ ngang ~ 4:3)
 }
 
@@ -39,9 +39,9 @@ export const doctor = {
   short: 'BS CKII Đỗ Văn Tâm',
   bio: 'Hơn 20 năm kinh nghiệm chuyên khoa Phụ Sản tại Bệnh viện Đa khoa tỉnh Bình Định. Bác sĩ trực tiếp thăm khám, tư vấn và đồng hành cùng mẹ bầu trong suốt hành trình thai kỳ.',
   education: [
-    { year: '1998', title: 'Tốt nghiệp Bác sĩ', place: 'Trường Đại học Y Huế' },
-    { year: '2012', title: 'Chuyên khoa I', place: 'Trường Đại học Y Huế' },
-    { year: '2016', title: 'Chuyên khoa II', place: 'Trường Đại học Y Huế' },
+    { year: '1998', title: 'Tốt nghiệp Bác sĩ', place: 'Trường Đại học Y Huế', placeShort: 'ĐH Y Huế' },
+    { year: '2012', title: 'Chuyên khoa I', place: 'Trường Đại học Y Huế', placeShort: 'ĐH Y Huế' },
+    { year: '2016', title: 'Chuyên khoa II', place: 'Trường Đại học Y Huế', placeShort: 'ĐH Y Huế' },
   ],
 }
 

@@ -13,8 +13,8 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-night text-cream">
       <div className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-honey-500/10 blur-3xl" />
-      <div className="container-x relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:py-20">
-        <div className="lg:col-span-4">
+      <div className="container-x relative grid grid-cols-2 gap-x-6 gap-y-10 py-14 sm:gap-12 sm:py-16 lg:grid-cols-12 lg:py-20">
+        <div className="col-span-2 lg:col-span-4">
           <Logo dark />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
             {clinic.name} – {clinic.slogan.toLowerCase()}. Nơi mỗi nụ cười của mẹ, mỗi nhịp tim đầu tiên của con được chăm sóc bằng cả trái tim.
@@ -55,7 +55,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="lg:col-span-3">
+        <div className="col-span-2 lg:col-span-3">
           <p className={heading}>Liên hệ</p>
           <ul className="mt-5 space-y-4 text-sm text-cream/70">
             <li className="flex gap-3">
@@ -93,7 +93,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-cream/10">
-        <div className="container-x flex flex-col gap-2 py-6 text-xs text-cream/50 md:flex-row md:items-center md:justify-between">
+        <div className="container-x flex flex-col gap-2 pt-6 pb-24 text-xs text-cream/50 md:flex-row md:items-center md:justify-between md:pb-6">
           <p>© {new Date().getFullYear()} {clinic.name}. Bảo lưu mọi quyền.</p>
           <p>Thông tin trên website chỉ mang tính tham khảo, không thay thế cho chẩn đoán của bác sĩ.</p>
         </div>
